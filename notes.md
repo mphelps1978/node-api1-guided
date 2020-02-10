@@ -13,7 +13,7 @@
 
 ## Features
 
-- client wants to view a list of hubs
-- client wants to add a hub
-- client wants to remove a hub
-- client wants to update a hub
+- client wants to view a list of hubs GET /api/hubs
+- client wants to add a hub POST /api/hubs
+- client wants to remove a hub DELETE /api/hubs/:id
+- client wants to update a hub PUT /api/hubs/:id
