@@ -45,7 +45,19 @@ server.post('/api/hubs', (req, res) => {
     })
 })
 
+// delete a hub
 
+server.delete('/api/hubs/:id', (req, res) => {
+  // get the id from the params of the request, and remove that ID
+  hubs.remove(req.params.id)
+  .then(removed => {
+    res.status(200).json(removed)
+  })
+  .catch(err => {
+    console.log(err)
+    res.status(500).json({errorMessage: 'There was a problem'})
+    })
+})
 
 
 server.listen(port, () => console.log(`\n** Server is running on ${port}`));
